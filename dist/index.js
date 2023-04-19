@@ -5,11 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const fs_1 = __importDefault(require("fs"));
-const cors_1 = __importDefault(require("cors"));
+const cors = require("cors");
 const port = process.env.PORT || 8080;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+app.use(cors());
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
@@ -47,9 +47,3 @@ app.post("/combinations", function (req, res) {
         }
     });
 });
-// fetch("http://localhost:8080/combinations", {
-//   method: "POST",
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify({ combination: "xxxxxxxxxx", status: "green", children: [] }),
-//
-// });
