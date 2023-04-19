@@ -1,6 +1,5 @@
 import express from "express";
-const path = require("path");
-const fs = require("fs");
+import fs from "fs";
 const cors = require("cors");
 
 const port = process.env.PORT || 8080;
@@ -52,10 +51,3 @@ app.post("/combinations", function (req, res) {
     }
   });
 });
-
-// fetch("http://localhost:8080/combinations", {
-//   method: "POST",
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify({ combination: "xxxxxxxxxx", status: "green", children: [] }),
-//
-// });
