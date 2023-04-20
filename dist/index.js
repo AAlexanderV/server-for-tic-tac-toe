@@ -11,8 +11,7 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(cors({
     origin: "*",
-    // ,
-    // methods: ["GET", "POST"],
+    methods: ["GET", "POST"],
 }));
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
