@@ -5,11 +5,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const fs_1 = __importDefault(require("fs"));
-// const cors = require("cors");
+const cors = require("cors");
 const port = process.env.PORT || 8080;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-// app.use(cors());
+app.use(cors({
+    origin: "*",
+    // ,
+    // methods: ["GET", "POST"],
+}));
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
